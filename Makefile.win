@@ -1,0 +1,61 @@
+# Project: BinTree
+# Makefile created by Dev-C++ 5.6.3
+
+CPP      = g++.exe
+CC       = gcc.exe
+WINDRES  = windres.exe
+OBJ      = Queue.o main.o BinTree.o Stack.o BinSearchTree.o AVLTree.o MaxHeap.o HuffmanTree.o MinHeap.o SetType.o ListLeaves.o "Tree\ Traversals\ Again.o"
+LINKOBJ  = Queue.o main.o BinTree.o Stack.o BinSearchTree.o AVLTree.o MaxHeap.o HuffmanTree.o MinHeap.o SetType.o ListLeaves.o "Tree Traversals Again.o"
+LIBS     = -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib" -L"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/lib" -static-libstdc++ -static-libgcc -g3
+INCS     = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include"
+CXXINCS  = -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/mingw32/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include" -I"C:/Program Files (x86)/Dev-Cpp/MinGW32/lib/gcc/mingw32/4.8.1/include/c++"
+BIN      = BinTree.exe
+CXXFLAGS = $(CXXINCS) -g3
+CFLAGS   = $(INCS) -g3
+RM       = rm.exe -f
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before $(BIN) all-after
+
+clean: clean-custom
+	${RM} $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(LINKOBJ) -o $(BIN) $(LIBS)
+
+Queue.o: Queue.c
+	$(CC) -c Queue.c -o Queue.o $(CFLAGS)
+
+main.o: main.c
+	$(CC) -c main.c -o main.o $(CFLAGS)
+
+BinTree.o: BinTree.c
+	$(CC) -c BinTree.c -o BinTree.o $(CFLAGS)
+
+Stack.o: Stack.c
+	$(CC) -c Stack.c -o Stack.o $(CFLAGS)
+
+BinSearchTree.o: BinSearchTree.c
+	$(CC) -c BinSearchTree.c -o BinSearchTree.o $(CFLAGS)
+
+AVLTree.o: AVLTree.c
+	$(CC) -c AVLTree.c -o AVLTree.o $(CFLAGS)
+
+MaxHeap.o: MaxHeap.c
+	$(CC) -c MaxHeap.c -o MaxHeap.o $(CFLAGS)
+
+HuffmanTree.o: HuffmanTree.c
+	$(CC) -c HuffmanTree.c -o HuffmanTree.o $(CFLAGS)
+
+MinHeap.o: MinHeap.c
+	$(CC) -c MinHeap.c -o MinHeap.o $(CFLAGS)
+
+SetType.o: SetType.c
+	$(CC) -c SetType.c -o SetType.o $(CFLAGS)
+
+ListLeaves.o: ListLeaves.c
+	$(CC) -c ListLeaves.c -o ListLeaves.o $(CFLAGS)
+
+"Tree\ Traversals\ Again.o": Tree\ Traversals\ Again.c
+	$(CC) -c "Tree Traversals Again.c" -o "Tree Traversals Again.o" $(CFLAGS)
